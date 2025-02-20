@@ -160,18 +160,9 @@ export default {
       try {
         //2.ส่ง Method Request POST
         const response = await axios.post(`http://localhost:3000/carts/addcartdtl`, cartdtl);
-        try {
-          //2.ส่ง Method Request POST
-          const response = await axios.post(`http://localhost:3000/carts/addcartdtl`, cartdtl);
-          // ส่งสัญญานหลังติดต่อ Backend
-          EventBus.emit("cartdtlOK", { id: this.cartId }); //***ตรงนี้ที่ Error ตอนบรรยาย
-          // 3.รับค่า Response จาก Backend เพื่ีอแสดงผล
-          this.backendMessage = response.data.messageAddCartDtl;
-          console.log(response.data);
-        } catch (err) {
-          console.log(err);
-        }
 
+        // ส่งสัญญานหลังติดต่อ Backend
+        EventBus.emit("cartdtlOK", { id: this.cartId }); //***ตรงนี้ที่ Error ตอนบรรยาย
         // 3.รับค่า Response จาก Backend เพื่ีอแสดงผล
         this.backendMessage = response.data.messageAddCartDtl;
         console.log(response.data);

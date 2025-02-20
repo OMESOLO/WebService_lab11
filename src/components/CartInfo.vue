@@ -28,6 +28,7 @@ export default {
     EventBus.on("memlogout", () => {
       this.clearCart();
     });
+    
   },
   methods: {
     async sumCart(cid) {
